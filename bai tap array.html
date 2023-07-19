@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+<script>
+// Bài tập 1: Tính tổng các phần tử trong mảng
+// + Cho mảng ban đầu. Tính tổng các phẩn tử trong mảng. Ví dụ:
+// Input: [1,2,3]
+// Ouput: 6
+
+let input = [1,2,3];
+let sum = 0
+for (let index = 0; index < input.length; index++) {
+  sum += input[index]
+}
+
+console.log("tổng của mảng input là:",sum);
+
+// Bài tập 2: Tìm phần tử lớn nhất trong mảng
+// + Cho mảng ban đầu. Tìm phần tử lớn nhất. ví dụ:
+// Input: [1,2,3]
+// Output: 3
+
+let input2 = [1,2,3];
+let max = input2[0];
+let maxIndex = 0;
+
+for (let index = 0; index < input2.length; index++) {
+    if (max<input2[index]) {
+        max= input2[index];
+        maxIndex= index;
+    }   
+}
+console.log("giá trị lớn nhất của mảng là: "+max+" ở vị trí "+maxIndex);
+
+
+
+
+// Bài tập 3: Tìm phần tử nhỏ nhất trong mảng
+// + Cho mảng ban đầu. Tìm phần tử nhỏ nhất. ví dụ:
+// Input: [10,8,2,6]
+// Output: 2
+let input3 = [10,8,2,6];
+let min = input3[0];
+let minIndex = 0;
+
+for (let index = 0; index < input3.length; index++) {
+    if (min>input3[index]) {
+        min = input3[index];
+        minIndex= index;
+    }   
+}
+console.log("giá trị nhỏ nhất của mảng là: "+min+" ở vị trí "+minIndex);
+
+// Bài tập 4: Kiểm tra xem phần tử có tồn tại trong mảng hay không
+// Cho mảng ban đầu, làm theo 2 cách:
+// + Cách 1: Không sử dụng hàm có sẵn
+// + Cách 2: Sử dụng hàm có sẵn
+// Input: [1, 2, 3, 4, 5];
+// Output: true/false
+
+let input4 = [1, 2, 3, 4, 5];
+let findNum = 1
+let exist = false;
+// cách 1
+for (let index = 0; index < input4.length; index++) {
+if (input4[index]==findNum) {
+    exist = true;
+    break;
+}    
+}
+console.log("kết quả tìm kiếm là",exist);
+
+// cách 2
+
+exist1 = input4.includes(0);
+console.log("kết quả tìm kiếm là",exist1);
+// Bài tập 5: Đảo ngược giá trị trong mảng
+// Input: [1, 2, 3, 4, 5]
+// Ouput: [5, 4, 3, 2, 1]
+// cách 1
+let input5 = [1, 2, 3, 4, 5];
+let inputLength= input5.length
+let output = []
+output.length=inputLength;
+
+    for (let index = 0; index < input5.length; index++) {
+        output[index]=input5[inputLength-1-index]    
+    }
+console.log("mảng đảo ngược là", output);
+
+// cách 2
+let output2 = [];
+output2 = input5.reverse()
+console.log("mảng đảo ngược là", output2);
+
+// Bài tập 6: Lọc các phần tử chẵn trong mảng:
+// Input: [1, 2, 3, 4, 5]
+// Ouput: [2, 4]
+
+let input6 = [1, 2, 3, 4, 5];
+let output6 = [];
+
+for (let index = 0; index < input6.length; index++) {
+    if (input6[index]%2 == 0 ) {
+        output6.push(input6[index]);
+    }   
+}
+console.log("các phần tử chẵn trong mảng là",output6);
+
+
+
+
+// Bài tập 7: Tìm số lần xuất hiện của một phần tử trong mảng
+// + Cho mảng ban đầu và cho người dùng nhập 1 giá trị bất kỳ. Nếu có giá trị trong mảng thì sẽ báo số lần phần tử xuất hiện trong mảng
+// Input: [1, 2, 3, 2, 4, 2, 5] => người dùng nhập 2
+// Output: 3
+ let input7 = [1, 2, 3, 2, 4, 2, 5];
+ let inputNum = 2;
+ let inputAppear = 0
+for (let index = 0; index < input7.length; index++) {
+if (input7[index] == inputNum) {
+    inputAppear++;
+}  
+}
+console.log("sớ lần xuất hiện của phần tử  "+inputNum + " là:"+ inputAppear);
+
+
+
+// Bài tập 8: Sắp xếp lại mảng theo giá trị tăng dần
+// Input: [4, 2, 9, 5, 1]
+// Output: [1, 2, 4, 5, 9]
+
+let input8 = [4, 2, 9, 5, 1];
+
+input8.sort((a,b) =>a-b);
+
+console.log("sắp xếp mảng theo giá trị tăng dần", input8);
+
+</script>
+</body>
+</html>
